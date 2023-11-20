@@ -1,0 +1,129 @@
+﻿@*@model IEnumerable<Zero_Hunger.EF.Request>*@
+
+@model IEnumerable<ZeroHunger.DTO.RequestDTO>
+
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+
+
+<main>
+
+    <form action="/Restaurant/Request_send" method="get">
+        <button class="btn btn-primary" id="restaurantButt">Send Collect Request</button>
+
+    </form>
+
+    <br />
+
+
+    <form action="/Restaurant/Show_all_donation" method="get">
+        <button class="btn btn-primary" id="restaurantButt">Show All Donation</button>
+
+    </form>
+</main>
+
+
+
+<p>
+
+</p>
+
+@if (Model == null)
+{
+
+
+    <h1>No Request are available </h1>
+}
+else
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                Request_ID
+            </th>
+            <th>
+                Type of Food
+            </th>
+
+            <th>
+                Phone
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Max Preservation Time
+            </th>
+            <th>
+                Food Details
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Status
+            </th>
+
+            <th>
+                Assigned employee id
+            </th>
+
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.req_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.food_type)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.max_preservation_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.details_food)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.assigned_employee_id)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.date_of_order)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}

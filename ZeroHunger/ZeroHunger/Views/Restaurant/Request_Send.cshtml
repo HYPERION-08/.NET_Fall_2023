@@ -1,0 +1,139 @@
+﻿
+@model ZeroHunger.DTO.RestaurantDTO
+
+@{
+    ViewBag.Title = "Request_send";
+}
+
+<h2>Request_send</h2>
+
+
+
+<style>
+    form {
+        padding: 10px 200px;
+    }
+</style>
+
+
+
+
+@*@Html.ValidationSummary()
+*@
+
+<form class="border" action="" method="post">
+    <div class="form-group">
+
+        <label>Food Type</label>
+        <input type="text" class="form-control" id="foor_type" name="food_type" placeholder="Enter food type ">
+        <span class="text-danger">@Html.ValidationMessage("food_type")</span>
+
+    </div>
+
+
+
+
+
+    <div class="form-group">
+
+
+        <input type="hidden" class="form-control" id="res_id" name="rest_id" value="@ViewBag.res_idd" placeholder="Enter User email">
+
+
+        <input type="hidden" class="form-control" id="email" name="email" value="@Model.res_email" placeholder="Enter User email">
+
+        <input type="hidden" class="form-control" id="phone" name="phone" value="@Model.res_phone" placeholder="Enter User email">
+
+        <input type="hidden" class="form-control" id="location" name="location" value="@Model.res_location" placeholder="Enter User email">
+
+        <input type="hidden" class="form-control" id="res_id" name="res_id" value="@Model.restaurants_id" placeholder="Enter User email">
+
+        <input type="hidden" class="form-control" id="status" name="status" value="pendding" placeholder="Enter User email">
+
+
+
+        @*        <span class="text-danger">@Html.ValidationMessage("userid")</span>
+        *@
+    </div>
+
+
+
+
+
+    <div class="form-group">
+
+        <label>Quantity</label>
+        <input type="text" class="form-control" name="quantity" placeholder="Enter Quantity">
+        <span class="text-danger">@Html.ValidationMessage("quantity")</span>
+    </div>
+
+
+
+
+    <div class="form-group">
+
+        <label>Max Preservation Time</label>
+        <input type="text" class="form-control" id="max_preservation_time" name="max_preservation_time" placeholder="Enter Id">
+        <span class="text-danger">@Html.ValidationMessage("max_preservation_time")</span>
+
+    </div>
+
+
+
+
+
+    <div class="form-group">
+
+        <label>
+            details_food
+        </label>
+        <input type="text" class="form-control" name="details_food" placeholder="Enter Details">
+        <span class="text-danger">@Html.ValidationMessage("details_food")</span>
+
+    </div>
+
+
+
+
+
+    <div class="form-group">
+
+        <label>Date</label>
+        <input type="date" class="form-control" id="date" name="date_of_order" value="@ViewBag.now" placeholder="@ViewBag.now" disabled>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Restaurant_Dashboard")
+</div>

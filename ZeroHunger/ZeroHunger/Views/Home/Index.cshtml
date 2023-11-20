@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #3498db; /* Change to your preferred color */
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #2980b9; /* Change to your preferred hover color */
+            }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>ZeroHunger</h1>
+        <button class="btn btn-primary" id="AdminBtn">Admin</button> <br />
+        <button class="btn btn-primary" id="RestaurantBtn">Restaurant</button> <br />
+        <button class="btn btn-primary" id="EmployeeBtn">Employee</button>
+
+        <script>
+            document.getElementById("AdminBtn").addEventListener("click", function () {
+                window.location.href = "/Login/login?id=1";
+            });
+
+            document.getElementById("RestaurantBtn").addEventListener("click", function () {
+                window.location.href = "/Login/login?id=2";
+            });
+
+            document.getElementById("EmployeeBtn").addEventListener("click", function () {
+                window.location.href = "/Login/login?id=3";
+            });
+        </script>
+    </main>
+
+</body>
+</html>
